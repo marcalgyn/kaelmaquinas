@@ -1,0 +1,38 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Dashboard</h2>
+            </div>
+        </div>
+        {{>_msg}}
+        <hr>
+        <div class="row mb-3">
+            <div class="col-lg-3 col-sm-6">
+
+                <div class="card border-success mb-3 text-center" style="max-width: 18rem;" >
+                    <a href="/usuario/vis-usuario">
+                        <div class="card-body">
+                            <i class="fas fa-users fa-3x"></i>
+                            <h6 class="card-title">Usuários:</h6>
+                            <h2 class="lead">{{usuarios}}</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-sm-6">
+                <div class="card border-success mb-3 text-center" style="max-width: 18rem;">
+                    <a href="/contato/list-contato">
+                        <div class="card-body">
+                            <i class="fas fa-comments fa-3x"></i>
+                            <h6 class="card-title">Mensagens:</h6>
+                            <h2 class="lead">{{contato}}</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

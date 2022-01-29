@@ -1,0 +1,92 @@
+<!-- Inserir uma galeria de Imagens de serviços -->
+<div class="container gallery-container">
+    {{>_banner}}
+    <div class="tz-gallery">
+        <div id="principal">
+            <ul>
+
+            </ul>
+        </div>
+
+        <!-- Modelo fixo da galeria  -->
+        <!-- Alimentado pelo Banco de Dados 
+        Retirado provisoriamente
+        {{#each imagem}}
+        <div class="row">
+            <table>
+                <tr>
+
+                    <div class="col-sm-3 col-md-4">
+                        <a class="lightbox" href="{{url}}" id="{{_id}}">
+                            <td> <img src="{{url}}" alt="{{nome}}"> </td>
+                        </a>
+                        <td>
+                            <figcaption>{{legenda}}</figcaption>
+                        </td>
+                    </div>
+                </tr>
+            </table>
+        </div>
+        {{/each}}
+-->
+        <!-- Inicio do item -->
+        <div class="container">
+            {{#each imagem}}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="list-photo">
+                        <a href="{{url}}" id="{{_id}}" title="{{nome}}">
+                            <img src="{{url}}" alt="{{nome}}" class="sizeImagem"/></a>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 descricao">
+                    <article class="bl-pt-listbody">
+                        <div class="bl-pt-header">
+                            <h2>
+                                <a href="{{url}}" title="{{nome}}">
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="text-block">
+                            {{legenda}}
+                        </div>
+                    </article>
+                </div>
+            </div>
+           <hr class="corLinha" />
+           
+            <!-- Retirado provisoriamente 
+                
+
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <div class="descricao">
+                        <div class="sec-photo">
+                            <img src="{{url}}"
+                                alt="LASER Fibra Óptica para corte de chapas de grandes espessuras com 8,0m x 2,5m - MESA DUPLA CABINADA"
+                                width="600" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+            {{/each}}
+        </div>
+        <!--Fim do Item -->
+
+
+    </div>
+
+
+    <!-- Fim da Galeria -->
+
+    <div>
+        <a href="https://api.whatsapp.com/send?phone=+5562992235488&text=Gostaria de obter mais informações"
+            target="_blank"><img class="whatsapp" src="/images/whatsapp.png" /></a>
+    </div>
+
+    {{> _rodape}}
