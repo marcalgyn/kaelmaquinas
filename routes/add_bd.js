@@ -31,7 +31,7 @@ const bcryptjs = require("bcryptjs")
 router.get("/", (req, res) => {
     new HomeTopo({
         titulo: "Temos a solução para que sua empresa Precisa!",
-        subtitulo: "Este texto e subtitulo hehe hdkhald fflkjhf shf fsaf sd",
+        subtitulo: "Este texto e subtitulo ",
         titulobtn: "ENTRE EM CONTATO",
         urlbtn: "/contato"
     }).save().then(() => {
@@ -44,15 +44,15 @@ router.get("/", (req, res) => {
         titulo: "SERVIÇOS",
         iconeservum: "fas fa-truck-moving",
         tituloservum: "Serviço Um",
-        descservum: "descricao um hhalsdsdfjs fafjalksfaçsfasjfçalsjkfsjafd",
+        descservum: "descricao um",
 
         iconeservdois: "fas fa-truck-loading",
         tituloservdois: "Serviço Dois",
-        descservdois: "descricao dois hhalsdsdfjs fafjalksfaçsfasjfçalsjkfsjafd",
+        descservdois: "descricao dois",
 
         iconeservtres: "fas fa-boxes",
         tituloservtres: "Serviço tres",
-        descservtres: "descricao tres hhalsdsdfjs fafjalksfaçsfasjfçalsjkfsjafd sjdkah akjhlka dsklfhsdlkf hsldkfhlkashdfk",
+        descservtres: "descricao tres",
     }).save().then(() => {
         console.log("Serviços Cadastrado com sucesso")
     }).catch((erro) => {
@@ -71,7 +71,7 @@ router.get("/", (req, res) => {
 
     new Experiencia({
         titulo: "Somos uma empresa...",
-        subtitulo: "Subtitulo jhsdhkjdhlkha ldfkhfhsdflk",
+        subtitulo: "Subtitulo",
         iconeexpum: "fas fa-route",
         tituloexpum: "EXPERIENCIA",
         descexpum: "Descrição da experiencia um....",
@@ -100,7 +100,7 @@ router.get("/", (req, res) => {
         urlpgtreis: "/contato",
         tituloend: "Contato",
         telefone: "(62) 9 8556-7314",
-        endereco: "Rua H-155, Ap. de Goiânia-GO",
+        endereco: "Rua, AGoiânia-GO",
         cnpj: "12.123.456./0001-00",
         tituloredsoc: "Rede Sociais",
         titulorsum: "Facebook",
@@ -122,7 +122,7 @@ router.get("/", (req, res) => {
         titulotop: "Empresa de Transporte",
         subtitulotop: "Descrição Top",
         titulo: "Somos uma empresa...",
-        subtitulo: "Subtitulo jhsdhkjdhlkha ldfkhfhsdflk",
+        subtitulo: "Subtitulo ",
 
         iconesbum: "fas fa-route",
         titulosbum: "EXPERIENCIA",
@@ -149,10 +149,10 @@ router.get("/", (req, res) => {
         titulohratend: "Fale Conosco",
         hratend: "Segunda a Sexta 08:00 ás 11:30 e 13:00 as 18:00",
         tituloend: "Logradouro",
-        logradouro: "Rua H-155",
-        bairro: "Cidade Vera Cruz",
-        complemento: "Qd 321 Lt 06",
-        cidade: "Aparecida de Goiânia",
+        logradouro: "Rua",
+        bairro: "Bairro",
+        complemento: "Qd 0 Lt 0",
+        cidade: "Goiânia",
         uf: "GO",
         telefone: "(62) 98556-7314",
     }).save().then(() => {

@@ -36,7 +36,7 @@ router.get("/", (req, res) => {
                 titulohratend: "Fale Conosco",
                 hratend: "Segunda a Sexta 08:00 ás 11:30 e 13:00 as 18:00",
                 tituloend: "Logradouro",
-                logradouro: "Rua Teste",
+                logradouro: "Rua",
                 bairro: "Bairro",
                 complemento: "Qd 0 Lt 0",
                 cidade: "Goiânia",
@@ -88,7 +88,6 @@ router.post("/add-contato", (req, res) => {
             res.send("Nenhuma Informação encontrada!!" + erro)
         })
 
-
     } else {
         const addContato = {
             nome: req.body.nome,
@@ -114,9 +113,7 @@ router.post("/add-contato", (req, res) => {
             })
 
         })
-
     }
-
 
 })
 router.get("/list-contato", eAdmin, (req, res) => {

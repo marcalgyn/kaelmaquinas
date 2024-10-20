@@ -93,14 +93,14 @@ app.use(express.static("public"))
 
 //Conexao com o Banco de Dados
 //mongoose.connect('mongodb://marcalgyn:a1a2a3a4@mongo_kaeldb:27017/kaeldb', {
-mongoose.connect('mongodb://localhost:27017/kaeldb', {
+mongoose.connect('mongodb://127.0.0.1:27017/kaeldb', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
 }).then(() => {
-    console.log("Conexao com banco de dados kaeldb realizado com sucesso ;) !!")
+    console.log("Conexao com banco de dados realizado com sucesso ;) !!")
 }).catch((erro) => {
-    console.log("Erro Conexao ao banco Kaeldb, NÃO foi realizado com sucesso. " + erro)
+    console.log("Erro Conexao ao banco, NÃO foi realizado com sucesso. " + erro)
 })
 
 //Rotas

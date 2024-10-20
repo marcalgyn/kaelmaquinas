@@ -5,7 +5,7 @@ body {
     color: #FFF !important;
 }
 .menu-per{
-    background-color: #d00 !important;
+    background-color: rgb(22, 2, 110) !important;
 }
 .sidebar{
     background-color: #fff;
@@ -22,7 +22,7 @@ body {
 }
 .sidebar ul li a:hover, .sidebar ul .active a{
     color: #ecedee;
-    background-color: #d00;
+    background-color: rgb(11, 5, 94);
 }
 .sidebar ul ul a{
     padding-left: 2.5rem;

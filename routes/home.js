@@ -7,6 +7,7 @@ const HomeTopo = mongoose.model("hometopos")
 const multer = require("multer")
 const path = require("path")
 const fs = require("fs")
+const sharp = require('sharp')
 
 
 require("../models/Rodape")
@@ -23,6 +24,8 @@ const Video = mongoose.model('video')
 
 require("../models/Experiencia")
 const Experiencia = mongoose.model('experiencia')
+
+
 
 
 const { eAdmin } = require("../helpers/eAdmin")
@@ -200,34 +203,64 @@ router.get("/edit-home-img", eAdmin, (req, res) => {
 })
 
 const storage = multer.diskStorage({
+
     destination: function (req, res, cb) {
         cb(null, "public/images/topo_home")
     },
     filename: function (req, res, cb) {
         cb(null, "home-top.jpg")
     }
+
 })
 
 const uploads = multer({ storage: storage });
 
 const upload = multer({
     storage,
-    fileFilter: (req, file, cb) => {
+    fileFilter: async(req, file, cb) => {
         if (file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+
             cb(null, true)
         } else {
             cb(null, false)
         }
     }
 })
+ 
 
-router.post("/home/update-home-img", eAdmin, upload.single("file"), (req, res, next) => {
 
-    const file = req.file
+
+router.post("/home/update-home-img", eAdmin, upload.single('file'), (req, res, next) => {
+   
+    const file = req.file;
+
+    const arqEntrada = req.file.path.replace(/\\/g, '/');
+    const novoNome = 'temp.jpg';
+
+    fs.rename(req.file.path, novoNome, (err) =>{
+        if (err) {
+            console.error('erro ao renomear', err);
+        } else {
+            console.log('arquivo renomeado', novoNome); 
+        }
+    });
+
+    
+    const arqAlt = req.file.path.replace(/\\/g, '/');
+    console.log('--------- ', arqAlt);
+
     if (!file) {
         req.flash("error_msg", "Selecione uma imagem Jpeg")
         res.redirect("/home/edit-home-img/")
     } else {
+        
+        
+        
+        sharp(novoNome)
+        .resize(1850, 500)
+        .toFormat('jpg')
+        .toFile('public/images/topo_home/home-top.jpg')
+
         req.flash("success_msg", "Upload do banner realizado com sucesso")
         res.redirect("/vis-home")
     }
@@ -283,14 +316,12 @@ router.post("desativado/home/update-home-logo", eAdmin, uploads.single("file"), 
     var formidable = require('formidable');
     var fs = require('fs')
     var form = new formidable.IncomingForm();
-    console.log("Acesso 1" + Object.values(files));
+    
 
     form.parse(req, function (err, fields, files) {
         var oldpath = files.logo.path;
-        console.log(oldpath);
-
         var newpath = "/public/images/logo.jpg"; //files.filetoupload.name
-        console.log("Acesso 2" );
+  
         fs.rename(oldpath, newpath, function (err) {
             if (err) throw err;
             req.flash("success_msg", "Upload realizado com sucesso")

@@ -1,26 +1,43 @@
 <!--Criar banner -->
 
 
-<section style="position: relative;">
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+<section style="position: relative; ">
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel" >
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <!-- Criação com 3 fotos o slide-->
-        <div class="carousel-inner conf-banner">
+        <div class="carousel-inner conf-banner" style="align-items: center;" >
+           <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top"> mobile
+            <nav class="navbar navbar-expand-md navbar-light descr-menu"> desktop
+            -->
+
             <div class="carousel-item active ">
-                <img src="/images/topo_home/home-top.jpg" class="img-responsive center-block" alt="Primeiro Slide" class="img-responsive" >
+                <img  src="/images/topo_home/home-top.jpg" 
+                class="img-responsive center-block d-none d-sm-block conf-banner" alt="Primeiro Slide" style="width: auto;" >
+                
+                <img  src="/images/topo_home/top-mobile.jpg" 
+                class="img-responsive center-block d-block d-sm-none " alt="Primeiro Slide" style="width: auto;" >
+            </div>
+            
+            <div class="carousel-item conf-banner">
+                <img src="/images/topo_home/home-top1.jpg"  
+                class="img-responsive center-block d-none d-sm-block conf-banner" alt="Segundo Slide" style="width: auto;" >
+
+                <img  src="/images/topo_home/top-mobile1.jpg" 
+                class="img-responsive center-block d-block d-sm-none " alt="Segundo Slide" style="width: auto;" >
+
             </div>
 
-            <div class="carousel-item">
-                <img src="/images/topo_home/home-top1.jpg" class="img-responsive center-block" alt="Segundo Slide" class="img-responsive" >
-                <!--<img src="/images/topo_home/home-top1.jpg" class="d-block w-100" alt="Segundo Slide"> -->
-            </div>
+            <div class="carousel-item conf-banner">
+                <img src="/images/topo_home/home-top2.jpg" 
+                class="img-responsive center-block d-none d-sm-block conf-banner" alt="Terceiro Slide" class="img-responsive">
 
-            <div class="carousel-item">
-                <img src="/images/topo_home/home-top2.jpg" class="img-responsive center-block" alt="Terceiro Slide" class="img-responsive">
+                <img  src="/images/topo_home/top-mobile2.jpg" 
+                class="img-responsive center-block d-block d-sm-none " alt="Terceiro Slide" style="width: auto;" >
+
             </div>
         </div>
 
